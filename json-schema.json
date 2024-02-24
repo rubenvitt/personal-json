@@ -1,0 +1,536 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rubeen.dev/schemas/2024-02/personal.json",
+  "title": "Personal Data Schema",
+  "description": "A schema for personal data",
+  "type": "object",
+  "properties": {
+    "person": {
+      "type": "object",
+      "description": "A person's data",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the person"
+        },
+        "label": {
+          "type": "string",
+          "description": "A label for the person, e.g. 'Software Engineer' or 'Consultant'"
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+          "description": "The birth date of the person, e.g. 1985-02-17"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URL to a picture of the person"
+        },
+        "summary": {
+          "type": "string",
+          "description": "A short summary of the person"
+        }
+      },
+      "required": [
+        "name",
+        "label",
+        "birthDate"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "description": "Contact information of the person",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The email address of the person"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the person"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL of the person's website"
+        },
+        "profiles": {
+          "type": "array",
+          "description": "Profiles of the person on social networks",
+          "items": {
+            "type": "object",
+            "properties": {
+              "network": {
+                "type": "string",
+                "description": "The name of the social network"
+              },
+              "username": {
+                "type": "string",
+                "description": "The username of the person on the social network"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the person's profile on the social network"
+              }
+            },
+            "required": [
+              "network",
+              "username",
+              "url"
+            ]
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "description": "The location of the person",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "The address of the person"
+        },
+        "postalCode": {
+          "type": "string",
+          "description": "The postal code of the person"
+        },
+        "city": {
+          "type": "string",
+          "description": "The city of the person"
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "The country code of the person"
+        },
+        "region": {
+          "type": "string",
+          "description": "The region of the person"
+        }
+      }
+    },
+    "resume": {
+      "type": "object",
+      "description": "The resume of the person",
+      "properties": {
+        "work": {
+          "type": "array",
+          "description": "Work experience",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string",
+                "description": "The name of the company"
+              },
+              "position": {
+                "type": "string",
+                "description": "The position at the company"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the company"
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The start date of the work"
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The end date of the work"
+              },
+              "summary": {
+                "type": "string",
+                "description": "A short summary of the work"
+              },
+              "highlights": {
+                "type": "array",
+                "description": "Highlights of the work",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "company",
+              "position",
+              "startDate"
+            ]
+          }
+        },
+        "education": {
+          "type": "array",
+          "description": "Educational history",
+          "items": {
+            "type": "object",
+            "properties": {
+              "institution": {
+                "type": "string",
+                "description": "The name of the institution"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the institution"
+              },
+              "area": {
+                "type": "string",
+                "description": "The area of study, e.g. 'Computer Science' or 'Engineering'"
+              },
+              "studyType": {
+                "type": "string",
+                "description": "The type of study, e.g. 'Bachelor', 'Master', 'PhD'"
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The start date of the education"
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The end date of the education"
+              }
+            },
+            "required": [
+              "institution",
+              "area",
+              "studyType",
+              "startDate"
+            ]
+          },
+          "properties": {
+            "company": {
+              "type": "string",
+              "description": "The name of the company"
+            },
+            "position": {
+              "type": "string",
+              "description": "The position at the company"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "The URL of the company"
+            },
+            "startDate": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+              "description": "The start date of the work"
+            },
+            "endDate": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+              "description": "The end date of the work"
+            },
+            "summary": {
+              "type": "string",
+              "description": "A short summary of the work"
+            },
+            "highlights": {
+              "type": "array",
+              "description": "Highlights of the work",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "company",
+            "position",
+            "startDate"
+          ]
+        },
+        "volunteer": {
+          "type": "array",
+          "description": "Volunteer work",
+          "items": {
+            "type": "object",
+            "properties": {
+              "organization": {
+                "type": "string",
+                "description": "The name of the organization"
+              },
+              "position": {
+                "type": "string",
+                "description": "The position at the organization"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the organization"
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The start date of the volunteer work"
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The end date of the volunteer work"
+              },
+              "summary": {
+                "type": "string",
+                "description": "A short summary of the volunteer work"
+              },
+              "highlights": {
+                "type": "array",
+                "description": "Highlights of the volunteer work",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "organization",
+              "position",
+              "startDate"
+            ]
+          }
+        },
+        "awards": {
+          "type": "array",
+          "description": "Awards and honors",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "The title of the award"
+              },
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The date of the award"
+              },
+              "awarder": {
+                "type": "string",
+                "description": "The entity that granted the award"
+              },
+              "summary": {
+                "type": "string",
+                "description": "A short summary of the award"
+              }
+            }
+          }
+        },
+        "publications": {
+          "type": "array",
+          "description": "Publications including articles and books with url",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the publication"
+              },
+              "publisher": {
+                "type": "string",
+                "description": "The publisher of the publication"
+              },
+              "releaseDate": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+                "description": "The release date of the publication"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the publication"
+              },
+              "summary": {
+                "type": "string",
+                "description": "A short summary of the publication"
+              }
+            },
+            "required": [
+              "name",
+              "releaseDate",
+              "url"
+            ]
+          }
+        },
+        "skills": {
+          "type": "array",
+          "description": "Skills of the person",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the skill"
+              },
+              "level": {
+                "type": "string",
+                "description": "The level of the skill, e.g. 'beginner', 'intermediate', 'advanced'"
+              },
+              "certifications": {
+                "type": "array",
+                "description": "Certifications for the skill",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "The name of the certification"
+                    },
+                    "authority": {
+                      "type": "string",
+                      "description": "The authority that granted the certification"
+                    },
+                    "license": {
+                      "type": "string",
+                      "description": "The license number of the certification"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The URL of the certification"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "authority"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "name",
+              "level"
+            ]
+          }
+        },
+        "languages": {
+          "type": "array",
+          "description": "Languages spoken by the person",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "type": "string",
+                "description": "The name of the language"
+              },
+              "fluency": {
+                "type": "string",
+                "description": "The level of fluency, e.g. 'native', 'fluent', 'beginner'"
+              }
+            },
+            "required": [
+              "language",
+              "fluency"
+            ]
+          }
+        },
+        "interests": {
+          "type": "array",
+          "description": "Interests of the person",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references": {
+          "type": "array",
+          "description": "References from previous employers",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the reference"
+              },
+              "position": {
+                "type": "string",
+                "description": "The position of the reference"
+              },
+              "company": {
+                "type": "string",
+                "description": "The company of the reference"
+              },
+              "email": {
+                "type": "string",
+                "format": "email",
+                "description": "The email address of the reference"
+              },
+              "phone": {
+                "type": "string",
+                "description": "The phone number of the reference"
+              }
+            },
+            "required": [
+              "name",
+              "position",
+              "company"
+            ]
+          }
+        }
+      },
+      "required": [
+        "education",
+        "work"
+      ]
+    },
+    "projects": {
+      "type": "array",
+      "description": "Personal projects",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the project"
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the project"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL of the project"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+            "description": "The start date of the project"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(\\d{4}-\\d{2}-\\d{2})$",
+            "description": "The end date of the project"
+          },
+          "highlights": {
+            "type": "array",
+            "description": "Highlights of the project",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "startDate"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "person": {
+    "name": "Klaus Herberth",
+    "label": "Software Developer",
+    "summary": "I'm a software developer with a passion for web technologies. I'm currently working at a startup in London, where I'm responsible for the development of our web platform. I have experience with a range of technologies including JavaScript, Ruby on Rails, and PostgreSQL.",
+    "image": "https://klaus.email/assets/images/klaus-herberth.jpg",
+    "birthDate": "1985-01-01"
+  },
+  "contact": {
+    "email": "klaus@klaus.email",
+    "phone": "+4915203580000",
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "klaus_herberth",
+        "url": "https://twitter.com/klaus_herberth"
+      },
+      {
+        "network": "GitHub",
+        "username": "klaus-herberth",
+        "url": "http://github.com/klaus-herberth"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "klaus-herberth",
+        "url": "https://www.linkedin.com/in/klaus-herberth"
+      }
+    ],
+    "website": "https://klaus.email"
+  },
+  "location": {
+    "address": "Klaus Herberth, 1st floor, 1-3 The Courtyard, Calvin Street, London, E1 6NW",
+    "city": "London",
+    "country": "United Kingdom",
+    "postalCode": "E1 6NW",
+    "region": "England"
+  },
+  "projects": [
+    {
+      "name": "Personal Website",
+      "url": "https://klaus.email",
+      "description": "My personal website, built with Jekyll and hosted on GitHub Pages.",
+      "endDate": "2016-01-01",
+      "startDate": "2015-01-01",
+      "highlights": [
+        "Implemented a responsive design",
+        "Integrated Google Analytics"
+      ]
+    }
+  ]
+}
